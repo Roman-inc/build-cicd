@@ -63,6 +63,7 @@ def scan_repo(repo_key):
             schedule = yaml.safe_load(r.text)
             for build in schedule.get('build', []):
                 cron_exp = build.get('cron')
+                print(f'cron expression: {cron_exp}')
                 if cron_exp and should_run(cron_exp):
                     inputs = {
                         'onefile': build['onefile']
