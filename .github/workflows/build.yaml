@@ -17,6 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pwd
+          ps -lah
           python -m pip install --upgrade pip
           pip install -r .github/scripts/requirements.txt
 
