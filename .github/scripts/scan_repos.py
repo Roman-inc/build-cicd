@@ -67,12 +67,13 @@ def scan_repo(repo_key):
                     inputs = {
                         'onefile': build['onefile']
                     }
+                    trigger_workflow('build-nunet.yaml', inputs)
                     all_inputs[build['name']] = inputs
         except Exception as e:
             print(f'Error in branch {branch}\n{e}')
 
-    for input_data in all_inputs:
-        trigger_workflow('build-nunet.yaml', input_data)
+    # for input_data in all_inputs:
+    #     trigger_workflow('build-nunet.yaml', input_data)
 
 def scan_all_repos():
     scan_repo('NUNET')
