@@ -76,3 +76,5 @@ def scan_repo(repo_key):
 
 def scan_all_repos():
     scan_repo('NUNET')
+
+scan_all_repos()
