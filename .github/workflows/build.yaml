@@ -9,7 +9,9 @@ jobs:
     env:
       GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
     
-    steps:      
+    steps:
+      - uses: actions/checkout@v4
+
       - name: Set up Python 3
         uses: actions/setup-python@v5.6.0
         with:
