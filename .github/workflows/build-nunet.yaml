@@ -13,12 +13,6 @@ jobs:
     outputs:
       onefile: ${{ steps.params.outputs.onefile }}
     steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: 'Roman-inc/nunet'
-        token: ${{ secrets.GIT_TOKEN }}
-        fetch-depth: 0
-        ref: main
     - name: Set up parameters
       id: params
       run: |
@@ -34,6 +28,12 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: 'Roman-inc/nunet'
+        token: ${{ secrets.GIT_TOKEN }}
+        fetch-depth: 0
+        ref: main
     - name: Set up Python 3.10
       uses: actions/setup-python@v5.6.0
       with:
